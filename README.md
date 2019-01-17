@@ -19,33 +19,33 @@ explored using a normal file manager in case you only need a few backed up files
 
 ## Installing
 
-* The following requirements are necessary:
+The following requirements are necessary:
 
-`rsync`
+	`rsync`
 
-`tar`
+	`tar`
 
-`gpg` (for encrypted tar backups)
+	`gpg` (for encrypted tar backups)
 
-GNU versions of:
+	GNU versions of:
 
-`cp` `mv` `seq`
+	`cp` `mv` `seq`
 
 (other versions may work, but you must check your versions' man pages
 against their usage in these files to ensure compatibility)
 
-
 Most of these should already be installed on your system, and all of them will
 be available through your package manager.
 
+---
 
-* The program can then be installed with:
+The program can then be installed with:
 
-	./install.sh
+    ./install.sh
 
-* A configured install can be done with:
+A configured install can be done with:
 
-	./install.sh --snapshots-dir=<path> --num-increments=<int> --no-systemd
+    ./install.sh --snapshots-dir=<path> --num-increments=<int> --no-systemd
 
 A default installation with create the directory `/snapshots` and
 set the number of increment backups to be `5` (5 plus current, for a total of `6`)
@@ -60,7 +60,7 @@ will also store a password in plain-text, it should also have only **root permis
 
 ## Optional Configuration
 
-* You may want to exclude certain files from being backed up. Large binary blobs
+You may want to exclude certain files from being backed up. Large binary blobs
 will perform poorly under this backup tool since increments are made at the file
 level, not the block level.
 
@@ -78,13 +78,15 @@ At the **very minimum**, you will want to exclude files like:
 
 A number of these are excluded by default.
 
-* You might also want to activate the systemd service file or timer.
+---
+
+You might also want to activate the systemd service file or timer.
 **Do not enable snapsyd on startup** unless you like terrible startup performance,
 and Silicon Valley already has plenty of that.
 
 The systemd timer will run a backup every day at 4AM (or closest possible time)
 
-* If you are **not using systemd* then you can symlink `snapsysd.sh` to anacron
+If you are **not using systemd** then you can symlink `snapsysd.sh` to anacron
 folders, which will run the script for you. (This is supported on Debian, for example).
 
 Similarly, if you aren't using systemd, then chances are you already have a version of
