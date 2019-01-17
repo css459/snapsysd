@@ -1,0 +1,8 @@
+# Makes a system snapshot
+
+[Unit]
+Description=System Snapshotting
+
+[Service]
+Type=oneshot
+ExecStart=/snapshots/snapshot.sh

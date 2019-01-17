@@ -1,0 +1,11 @@
+# Makes a system snapshot every day
+
+[Unit]
+Description=Makes a system snapshot every day
+
+[Timer]
+OnCalendar=*-*-* 4:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
