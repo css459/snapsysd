@@ -37,7 +37,7 @@ against their usage in these files to ensure compatibility)
 Most of these should already be installed on your system, and all of them will
 be available through your package manager.
 
----
+___
 
 The program can then be installed with:
 
@@ -78,7 +78,7 @@ At the **very minimum**, you will want to exclude files like:
 
 A number of these are excluded by default.
 
----
+___
 
 You might also want to activate the systemd service file or timer.
 **Do not enable snapsyd on startup** unless you like terrible startup performance,
